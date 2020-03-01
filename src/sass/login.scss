@@ -53,7 +53,7 @@ nav{
         width: 330px;
         height: 65px;
         margin-top: 18px;
-        background: url('../images/bw.png') no-repeat;
+        background: url('../images/login/bw.png') no-repeat;
         cursor: pointer;
         float: left !important;
     }
@@ -61,7 +61,7 @@ nav{
     div{
         width: 504px;
         height: 100px;
-        background: url('../images/baozhang.png');
+        background: url('../images/login/baozhang.png');
         float: right !important;
     }
 }
@@ -70,7 +70,7 @@ nav{
 section{
     width: 100%;
     height: 600px;
-    background: url('../images/banner.jpg') no-repeat;
+    background: url('../images/login/banner.jpg') no-repeat;
     background-size: cover;
     // 内部版心
     header{
@@ -134,7 +134,7 @@ section{
                     display: block;
                     width: 14px;
                     height: 14px;
-                    background: url('../images/yingsi.png') no-repeat;
+                    background: url('../images/login/yingsi.png') no-repeat;
                     position: absolute;
                     top: 9px;
                     right: 118px;
@@ -156,7 +156,7 @@ section{
                     display: block;
                     width: 14px;
                     height: 14px;
-                    background: url('../images/yingsi.png') no-repeat 0px -15px;
+                    background: url('../images/login/yingsi.png') no-repeat 0px -15px;
                     position: absolute;
                     top: 9px;
                     right: 118px;
@@ -181,7 +181,7 @@ section{
                     position: absolute;
                     top: 8px;
                     left: 46px;
-                    background: url('../images/yingsi.png') no-repeat -32px -32px;
+                    background: url('../images/login/yingsi.png') no-repeat -32px -32px;
                 }
                 // 验证码
                 div{
@@ -235,7 +235,7 @@ section{
                     position: absolute;
                     top: 8px;
                     left: 46px;
-                    background: url('../images/yingsi.png') no-repeat -32px -32px;
+                    background: url('../images/login/yingsi.png') no-repeat -32px -32px;
                 }
                 // 验证码
                 div{
@@ -250,7 +250,7 @@ section{
                         position: absolute;
                         top: 8px;
                         left: 43px;
-                        background: url('../images/yingsi.png') no-repeat -65px -32px;
+                        background: url('../images/login/yingsi.png') no-repeat -65px -32px;
                     }
                     
                 }
@@ -301,7 +301,7 @@ section{
                     position: absolute;
                     top: 8px;
                     left: 46px;
-                    background: url('../images/yingsi.png') no-repeat 0 -32px;
+                    background: url('../images/login/yingsi.png') no-repeat 0 -32px;
                 }
                 // 验证码
                 div{
@@ -316,7 +316,7 @@ section{
                         position: absolute;
                         top: 8px;
                         left: 43px;
-                        background: url('../images/yingsi.png') no-repeat -65px -32px;
+                        background: url('../images/login/yingsi.png') no-repeat -65px -32px;
                     }
                     
                 }
@@ -379,16 +379,16 @@ section{
                         margin-top: 5px;
                         cursor: pointer;
                         &:nth-of-type(1){
-                            background: url('../images/chat.png') no-repeat;
+                            background: url('../images/login/chat.png') no-repeat;
                         }
                         &:nth-of-type(2){
-                            background: url('../images/chat.png') no-repeat -63px 0px;
+                            background: url('../images/login/chat.png') no-repeat -63px 0px;
                         }
                         &:nth-of-type(3){
-                            background: url('../images/chat.png') no-repeat -128px 0px;
+                            background: url('../images/login/chat.png') no-repeat -128px 0px;
                         }
                         &:nth-of-type(4){
-                            background: url('../images/chat.png') no-repeat -191px 0px;
+                            background: url('../images/login/chat.png') no-repeat -191px 0px;
                         }
                     }
                 }
@@ -451,7 +451,7 @@ footer{
             display: block;
             width: 20px;
             height: 20px;
-            background: url('../images/gongan.png');
+            background: url('../images/login/gongan.png');
             position: absolute;
             top: 80px;
             left: 26px;
