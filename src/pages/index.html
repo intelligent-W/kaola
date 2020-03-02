@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/swiper/css/swiper.min.css">
 </head>
 <body>
     <!-- 顶部图片 -->
@@ -103,7 +104,16 @@
             </ul>
         </header>
     </nav>
-
+    <!-- 替换头部 -->
+    <div class="change">
+        <figure>
+            <p class="logo"></p>
+            <input type="text" class="search" placeholder="Adidas" onfocus="this.placeholder=''" onblur="this.placeholder='Adidas'">
+            <span></span>
+            <p class="ser"></p>
+            <strong></strong>
+        </figure>
+    </div>
     <!-- 头部 -->
     <div class="header">
         <p class="logo"></p>
@@ -136,23 +146,113 @@
     </div>
 
     <!-- 轮播图 -->
-    <div class="carousel">
-        <ul>
-            <li> <img src="../images/index/banner1.jpg" alt=""></li>
-            <li> <img src="../images/index/banner2.jpg" alt=""></li>
-            <li> <img src="../images/index/banner3.jpg" alt=""></li>
-        </ul>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../images/index/banner1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/index/banner2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="../images/index/banner3.jpg" alt="">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
         
-        <a class="left">&lt;</a>
-        <a class="right">&gt;</a>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev prev"></div>
+        <div class="swiper-button-next next"></div>
     </div>
-    <div class="circle">
-        <p class="cir"></p>
-        <p></p>
-        <p></p>
-    </div>
-    <script src="../lib/self/move.js"></script>
 
+    <!-- 轮播图左侧导航 -->
+    <div class="left_nav">
+        <ul>
+            <img>
+            <li>
+            </li>
+            <span></span>
+        </ul>
+    </div>
+    <!-- 美容彩妆 -->
+    <div class="left_nav_second">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p><img src="https://haitao.nosdn4.127.net/iqmf9t6y71_244_100.jpg" alt=""></p>
+    </div>
+    <!-- 母婴儿童 -->
+    <div class="left_nav_second_one">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nos.netease.com/iqmf9m9p59_244_100.jpg" alt="">
+        </p>
+    </div>
+    <!-- 营养保健 -->
+    <div class="left_nav_second_two">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nosdn4.127.net/iqrh4xrm15_244_100.jpg" alt="">
+        </p>
+    </div>
+    <!-- 数码家电 -->
+    <div class="left_nav_second_three">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nos.netease.com/iqmfbnlc90_244_100.jpg" alt="">
+        </p>
+    </div>
+    <!-- 个人洗护 -->
+    <div class="left_nav_second_four">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nos.netease.com/jq94oiu122null.jpg" alt="">
+        </p>
+    </div>
+    <!-- 服饰鞋靴 -->
+    <div class="left_nav_second_five">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nos.netease.com/1c8527h6j15_244_100.jpg" alt="">
+        </p>
+    </div>
+    <!-- 户外运动 -->
+    <div class="left_nav_second_six">
+        <ul class="lf clearbox">
+        </ul>
+        <ol class="rg">  
+        </ol>
+        <p>
+            <img src="https://haitao.nosdn5.127.net/ir73myvy45_244_100.jpg" alt="">
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    
+    <script src="../lib/swiper/js/swiper.min.js"></script>
     <script src="../lib/jquery/dist/jquery.min.js"></script>
     <script src="../js/index.js"></script>
 </body>

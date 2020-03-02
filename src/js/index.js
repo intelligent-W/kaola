@@ -116,47 +116,464 @@ for(var i=0;i<$('.dh>li').length;i++){
     })
 }
 
-// 轮播图
-var cars=document.querySelector('.carousel')
-var cars1=cars.querySelectorAll('img')
-var cars2=document.querySelectorAll('.circle>p')
-var btn1=cars.querySelector('.left')
-var btn2=cars.querySelector('.right')
-// 自动播放
-var timer
-var iNow=0
-timer=setInterval(autoPlay,2600)
-function autoPlay(){
-    iNow++
-    if(iNow===cars1.length){
-        iNow=0
+
+var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, // 循环模式选项
+    autoplay:{
+        delay:2000,
+    },
+    effect : 'fade',
+    fadeEffect: {
+        crossFade: true,
+    },
+    // 如果需要分页器
+    pagination: {
+      el: '.swiper-pagination',
+      clickable :true,
+    },
+    // autoplayDisableOnInteraction:true,
+    // paginationClickable:true,
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+    
+    // // 如果需要滚动条
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+  })  
+  mySwiper.el.onmouseover = function(){
+    mySwiper.autoplay.stop();
+  }
+  
+  //鼠标离开开始自动切换
+  mySwiper.el.onmouseout = function(){
+    mySwiper.autoplay.start();
+  }  
+// 点击下面的小圆点，图片跟着动
+  for(i=0;i<mySwiper.pagination.bullets.length;i++){
+    mySwiper.pagination.bullets[i].onmouseover=function(){
+      this.click();
+    };
+  } 
+
+//  左侧导航请求数据
+getList()
+function getList(){
+    $.ajax({
+        url:'../lib/self/left_nav.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <ul>
+                    <img src="${item.img}">
+                    <li>"${item.moduleTitle}</li>
+                    <span>${item.arrow}</span>
+                </ul>
+                `
+                
+            })
+            $('.left_nav>ul').html(str)
+        }
+    })
+}
+
+// 美容彩妆
+getList1()
+function getList1(){
+    $.ajax({
+        url:'../lib/self/right_nav.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second>.lf').html(str)
+        }
+    })
+}
+
+// 美容彩妆
+getList2()
+function getList2(){
+    $.ajax({
+        url:'../lib/self/right_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second>.rg').html(str)
+        }
+    })
+}
+
+// 母婴儿童
+getList3()
+function getList3(){
+    $.ajax({
+        url:'../lib/self/right_nav_one.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_one>.lf').html(str)
+        }
+    })
+}
+// 母婴儿童
+getList4()
+function getList4(){
+    $.ajax({
+        url:'../lib/self/right_nav_one_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_one>.rg').html(str)
+        }
+    })
+}
+// 营养保健
+getList5()
+function getList5(){
+    $.ajax({
+        url:'../lib/self/right_nav_two.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_two>.lf').html(str)
+        }
+    })
+}
+// 营养保健
+getList6()
+function getList6(){
+    $.ajax({
+        url:'../lib/self/right_nav_two_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_two>.rg').html(str)
+        }
+    })
+}
+// 数码家电
+getList7()
+function getList7(){
+    $.ajax({
+        url:'../lib/self/right_nav_three.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_three>.lf').html(str)
+        }
+    })
+}
+// 数码家电
+getList8()
+function getList8(){
+    $.ajax({
+        url:'../lib/self/right_nav_three_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_three>.rg').html(str)
+        }
+    })
+}
+
+// 个人洗护
+getList9()
+function getList9(){
+    $.ajax({
+        url:'../lib/self/right_nav_four.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_four>.lf').html(str)
+        }
+    })
+}
+// 个人洗护
+getList10()
+function getList10(){
+    $.ajax({
+        url:'../lib/self/right_nav_four_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_four>.rg').html(str)
+        }
+    })
+}
+// 服饰鞋靴
+getList11()
+function getList11(){
+    $.ajax({
+        url:'../lib/self/right_nav_five.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_five>.lf').html(str)
+        }
+    })
+}
+// 服饰鞋靴
+getList12()
+function getList12(){
+    $.ajax({
+        url:'../lib/self/right_nav_five_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_five>.rg').html(str)
+        }
+    })
+}
+// 户外运动
+getList13()
+function getList13(){
+    $.ajax({
+        url:'../lib/self/right_nav_six.json',
+        dataType:'json',
+        success:function(res){
+            // console.log(res)
+            let str=''
+            res.forEach(item=>{
+                // console.log(item)
+                str+=`
+                    <li>
+                    <dl>
+                    <dt>${item.title}</dt>
+                    <dd>
+                    <div>
+                `
+                item.list.forEach(item2=>{
+                    str+= `
+                        <a>${item2.name}</a>
+                    `
+                })
+                str+=`
+                </div>
+                </dd>
+                </dl>
+                </li>
+                `
+            })
+            $('.left_nav_second_six>.lf').html(str)
+        }
+    })
+}
+// 户外运动
+getList14()
+function getList14(){
+    $.ajax({
+        url:'../lib/self/right_nav_six_pic.json',
+        dataType:'json',
+        success:function(res){
+            let str=''
+            res.forEach(item=>{
+                str+=`
+                <li>
+                <img src="${item.img}">
+                </li>
+                `
+            })
+            $('.left_nav_second_six>.rg').html(str)
+        }
+    })
+}
+// 鼠标滚轮到100px的时候header变成固定定位
+$(window).scroll(function(){
+    if($(window).scrollTop()>=150){
+        $('.change').css({
+            display:'block'
+        })
+    }else{
+        $('.change').css({
+            display:'none'
+        })
     }
-    tab()
-}
-// 鼠标悬停在小按钮上，也可以实现
-for(let i=0;i<cars2.length;i++){
-    cars2[i].onmouseenter=function(){
-        for(let i=0;i<cars1.length;i++){
-            i=i-1
-            tab()
-    }
-}
-}
-function tab(){
-    for(let i=0;i<cars1.length;i++){
-        cars2[i].className=""
-        move(cars1[i],{'opacity':0})
-    }
-    cars2[iNow].className="cir"
-    move(cars1[iNow],{'opacity':100})
-}
-// 鼠标悬停上去，定时器停止,移出重启定时器
-cars.addEventListener('mouseenter',()=>{
-    clearInterval(timer)
-},false)
-cars.addEventListener('mouseleave',()=>{
-    timer=setInterval(autoPlay,2600)
-},false)
+})
+
+
+
+
 
 
 

@@ -1,0 +1,100 @@
+[   {
+        "id": 1,
+        "moduleTitle": "美容彩妆",
+        "img":"https://haitao.nos.netease.com/1cet9magj32_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "arrow":"&gt;",
+        "list":[{
+            
+        }]
+    },
+    {
+        "id": 2,
+        "img":"https://haitao.nos.netease.com/1cet9lmhg85_40_40.png?imageView&thumbnail=20x20&quality=100",
+        "moduleTitle": "母婴儿童",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 3,
+        "img":"https://haitao.nos.netease.com/1cet9no5t81_40_40.png?imageView&thumbnail=20x20&quality=100",
+        "moduleTitle": "营养保健",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 4,
+        "img":"https://haitao.nos.netease.com/1cet9ogop45_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "moduleTitle": "数码家电",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 5,
+        "img":"https://haitao.nos.netease.com/1cet9n9g361_40_40.png?imageView&thumbnail=20x20&quality=100",
+        "moduleTitle": "个人洗护",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 6,
+        "img":"https://haitao.nos.netease.com/1cet9peo633_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "moduleTitle": "服饰鞋靴",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 7,
+        "img":"https://haitao.nos.netease.com/1cet9p5fv45_40_40.png?imageView&thumbnail=20x20&quality=100",
+        "moduleTitle": "运动户外",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 8,
+        "img":"https://haitao.nos.netease.com/1cet9o36p76_40_40.png?imageView&thumbnail=20x20&quality=100",
+        "moduleTitle": "手表配饰",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 9,
+        "img":"https://haitao.nos.netease.com/1cet9mvrc65_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "moduleTitle": "轻奢",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 10,
+        "img":"https://haitao.nos.netease.com/1cvslvedr99_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "moduleTitle": "家居生活",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    },
+    {
+        "id": 11,
+        "img":"https://haitao.nos.netease.com/1cet9or5050_40_40.png?imageView&thumbnail=40x40&quality=100",
+        "moduleTitle": "环球美食",
+        "arrow":"&gt;",
+        "list":[{
+
+        }]
+    }
+]
