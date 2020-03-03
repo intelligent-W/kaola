@@ -448,6 +448,54 @@ nav{
     }
 }  
 
+// 轮播图下方
+.xiafang{
+    width: 100%;
+    height: 55px;
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    top: 704px;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    .cent{
+        width: 1144px;
+        height: 42px;
+        // background: skyblue;
+        padding: 5px 10px;
+        margin-left: 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 35px;
+        ul{
+            width: 500px;
+            display: flex;
+            li{
+                flex: 1;
+                list-style: none;
+                a{
+                    color: white;
+                }
+            }
+        }
+        p{
+            a{
+                position: relative;
+                color: white;
+                span{
+                    display: block;
+                    width: 19px;
+                    height: 22px;
+                    position: absolute;
+                    top: 2px;
+                    left: -23px;
+                    background: url('../images/index/phone.png') no-repeat;
+                }
+            }
+        }
+    }
+}
 
 // 轮播图左侧导航
 .left_nav{
@@ -456,793 +504,206 @@ nav{
     top: 252px;
     left: 160px;
     z-index: 10;
+    cursor: pointer;
     ul{
         width: 164px;
-        position: relative;
         li{
+            position: relative;
             width: 164px;
+            height: 41px;
+            line-height: 41px;
             background: linear-gradient(90deg,red,#ff3264);
             color: white;
-            padding: 11px 45px;
             list-style: none;
+            text-align: center;
             border-top: 0.3px solid white;
+            a{
+                color: white;
+                text-decoration: none;
+            }
+            img{
+                display: block;
+                width: 22px;
+                height: 20px;
+                position: absolute;
+                top: 12px;
+                left: 15px;
+            }
+            span{
+                position: absolute;
+                top: -1px;
+                left: 135px;
+                color: white;
+            }
         }
-        img{
-            display: block;
-            width: 22px;
-            height: 20px;
-            position: absolute;
-            top: 13px;
-            left: 14px;
-        }
-        span{
-            position: absolute;
-            top: 10px;
-            left: 135px;
-            color: white;
-        }
-    }
 }
+}
+.bigsel{
+    display: none;
+    overflow: hidden;
+    width: 980px;
+    height: 450px;
+    background: white;
+    position: absolute;
+    top: 252px;
+    left: 324px;
+    z-index: 9;
 
-
-// 美容彩妆
 .left_nav_second{
-    display: none;
     width: 980px;
     height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 50px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 14px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 3;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
+    color:gray;
+    ul{
+        width: 760px;
+        height: 509px;
+        // background: pink;
+        // margin-top: -16px;
+        box-sizing: border-box;
+        padding: 5px;
+        float: left;
+        li{
+            list-style: none;
+            width: 50%;
+            // background: red;
+            height: 160px;
+            float: left;
+            margin-bottom: 8px;
+            dl{
+                width: 100%;
+                height: 160px;
+                dt{
+                    border-bottom: 1px solid #ccc;
+                    padding-bottom: 10px;
+                }
+                dd{
+                    width: 280px;
+                    // background: orange;
+                    div{
+                        a{
+                            font-size: 14px;
+                            padding: 8px;
+                            &:nth-of-type(1){
+                                color: red;
+                            }
+                            &:nth-of-type(3){
+                                color: red;
+                            }
+                            &:nth-of-type(7){
+                                color: red;
+                            }
+                            &:nth-of-type(11){
+                                color: red;
+                            }
                         }
                     }
-                    
                 }
-                
             }
-          }
-      }
+            
+        }
     }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
+    ol{
+        width: 210px;
+        height: 509px;
+        background: rgba(177, 169, 169, 0.8); 
+        float: left;
+        margin-left: 8px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        li{
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            background: white;
+            float: left;
+            margin-bottom: 5px;
+            margin-left: 3px;
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p{
+            width: 190px;
+            height: 90px;
+            margin-top: 320px;
+            margin-left: 7px;
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;       
         }
     }
 }
 
-// 母婴儿童
-.left_nav_second_one{
-    display: none;
-    width: 980px;
-    height: 509px;
+}
+}
+
+
+.swiper-pagination {
+    top: 400px;
+    right: 500px;
+}
+
+
+// 左侧定位
+.p_l{
+    width: 99px;
+    height: 672px;
     background: skyblue;
     position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 50px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 14px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 3;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
+    top: 825px;
+    left: 150px;
+    cursor: pointer;
+    img{
+        display: block;
+        width: 99px;
+        height: 99px;
     }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
+    .list{
+        border: 1px solid #ccc;
+    ol>li,ul>li{
+        list-style: none;
     }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
+    ul{
+        // height: 40px;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        li{
+            background: red;
+            width: 99px;
+            height: 40px;
+            padding: 8px;
+            a{
+                color: black;
+                font-weight: 550;
+            }
+        }
+    }
+    ol{
+        width: 99px;
+        height: 585px;
+        margin-top: -20px;
+        font-size: 16px;
+        line-height: 1;
+        li{
+            height: 35px;
+            line-height: 35px;
+            background: pink;
+            padding: 10px;
+            a{
+                color: gray;
+            }
+        }
         img{
             display: block;
-            width: 100%;
-            height: 100%;
+            width: 99px;
+            height: 190px;
         }
     }
 }
 
-// 营养保健
-.left_nav_second_two{
-    display: none;
-    width: 980px;
-    height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 80px;
-          margin-top: 30px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 16px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 3;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
-    }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
 }
-
-// 数码家电
-.left_nav_second_three{
-    display: none;
-    width: 980px;
-    height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 20px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 16px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 2;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
-    }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-// 个人洗护
-.left_nav_second_four{
-    display: none;
-    width: 980px;
-    height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 20px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 16px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 2;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
-    }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-// 服饰鞋靴
-.left_nav_second_five{
-    display: none;
-    width: 980px;
-    height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 150px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 16px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 2;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
-    }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-// 户外运动
-.left_nav_second_six{
-    display: none;
-    width: 980px;
-    height: 509px;
-    background: skyblue;
-    position: absolute;
-    top: 252px;
-    left: 324px;
-    z-index: 9;
-    // overflow: hidden;
-    .lf{
-      width: 760px;
-      height: 509px;
-      background: white;
-      box-sizing: border-box;
-      padding: 15px;
-      border:1px solid red;
-      li{
-          width: 50%;
-          height: 150px;
-          float: left;
-          list-style: none;
-        //   background: plum;
-          margin-bottom: 30px;
-          dl{
-              width: 100%;
-            //   background: red;
-            dt{
-                font-size: 16px;
-                line-height: 1;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-
-            }
-            dd{
-                div{
-                    width: 300px;
-                    // height: 120px;
-                    // background: yellow;
-                    padding-right: 36px;
-                    
-                    a{
-                        font-size: 16px;
-                        text-decoration: none;
-                        color: gray;
-                        padding:  0 9px; 
-                        padding-left: 0;
-                        line-height: 2;
-                        &:nth-of-type(1){
-                            color: red;
-                        }
-                        &:nth-of-type(3){
-                            color: red;
-                        }
-                        &:nth-of-type(7){
-                            color: red;
-                        }
-                        &:nth-of-type(11){
-                            color: red;
-                        }
-                    }
-                    
-                }
-                
-            }
-          }
-      }
-    }
-    .rg{
-       width: 220px;
-       height: 509px;
-       background: rgba(177, 169, 169, 0.8); 
-       float: left;
-       position: absolute;
-       top: 0;
-       right: 0;
-       padding:5px;
-       box-sizing: border-box;
-       li{
-           width: 100px;
-           height: 100px;
-           list-style: none;
-           background: white;
-           float: left;
-           margin-bottom: 5px;
-           margin-left: 3px;
-           img{
-               display: block;
-               width: 100%;
-               height: 100%;
-           }
-       }
-       
-    }
-    p{
-        width: 190px;
-        height: 80px;
-        position: absolute;
-        bottom: 40px;
-        right: 21px;
-        img{
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
-
 
 
 .clearbox:after{

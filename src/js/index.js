@@ -169,395 +169,124 @@ function getList(){
         success:function(res){
             // console.log(res)
             let str=''
+            str+=`<ul>`
             res.forEach(item=>{
                 str+=`
-                <ul>
+                    <li>
                     <img src="${item.img}">
-                    <li>"${item.moduleTitle}</li>
+                    <a>${item.moduleTitle}</a>
                     <span>${item.arrow}</span>
-                </ul>
+                    </li>
                 `
                 
             })
-            $('.left_nav>ul').html(str)
+            str+=`</ul>`
+            $('.left_nav').html(str)
         }
     })
 }
 
-// 美容彩妆
-getList1()
-function getList1(){
-    $.ajax({
-        url:'../lib/self/right_nav.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
-            })
-            $('.left_nav_second>.lf').html(str)
-        }
-    })
-}
-
-// 美容彩妆
 getList2()
 function getList2(){
     $.ajax({
-        url:'../lib/self/right_pic.json',
+        url:'../lib/self/left_nav.json',
         dataType:'json',
         success:function(res){
+            // console.log(res)
             let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
-            })
-            $('.left_nav_second>.rg').html(str)
-        }
-    })
+
+
+            res.forEach(item1=>{
+                //先11分类
+                str+=`<div class="left_nav_second">`
+
+                str+=`<ul>`
+                //ul li为小模块=>item1.
+                // console.log(item1.list.length)//5
+                item1.list.forEach(item2=>{
+                    // console.log(item2.title)
+                    str+=`<li>
+                            <dl><dt>${item2.title}</dt>`
+                    //a
+                    str+=`<dd><div>`
+                    item2.content.forEach(item3=>{
+                    str+=`<a>${item3.name}</a>`
+                    })
+                    str+=`</div></dd>`
+                    str+=` </dl>
+                   </li>`
+                })
+
+                str+=`</ul>`
+                str+=`<ol>`
+                item1.imgsrc.forEach(item4=>{
+                    str+=`<li><img src="${item4.img}"></li>`
+                })
+
+                str+=`<p><img src="${item1.lastimg}"></p>`
+                str+=`</ol>`
+                ///1个分类结束
+                str+=`</div>`
+        })
+        $('.bigsel').html(str)
+    }
+})
 }
 
-// 母婴儿童
-getList3()
-function getList3(){
-    $.ajax({
-        url:'../lib/self/right_nav_one.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
-            })
-            $('.left_nav_second_one>.lf').html(str)
-        }
-    })
-}
-// 母婴儿童
-getList4()
-function getList4(){
-    $.ajax({
-        url:'../lib/self/right_nav_one_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
-            })
-            $('.left_nav_second_one>.rg').html(str)
-        }
-    })
-}
-// 营养保健
-getList5()
-function getList5(){
-    $.ajax({
-        url:'../lib/self/right_nav_two.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
-            })
-            $('.left_nav_second_two>.lf').html(str)
-        }
-    })
-}
-// 营养保健
-getList6()
-function getList6(){
-    $.ajax({
-        url:'../lib/self/right_nav_two_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
-            })
-            $('.left_nav_second_two>.rg').html(str)
-        }
-    })
-}
-// 数码家电
-getList7()
-function getList7(){
-    $.ajax({
-        url:'../lib/self/right_nav_three.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
-            })
-            $('.left_nav_second_three>.lf').html(str)
-        }
-    })
-}
-// 数码家电
-getList8()
-function getList8(){
-    $.ajax({
-        url:'../lib/self/right_nav_three_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
-            })
-            $('.left_nav_second_three>.rg').html(str)
-        }
-    })
-}
 
-// 个人洗护
-getList9()
-function getList9(){
-    $.ajax({
-        url:'../lib/self/right_nav_four.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
+
+$(function(){
+    $('.left_nav>ul>li').each(function(index,item){
+        $(this).mouseenter(function(){
+            $('.bigsel').css({
+                display:'block'
             })
-            $('.left_nav_second_four>.lf').html(str)
-        }
-    })
-}
-// 个人洗护
-getList10()
-function getList10(){
-    $.ajax({
-        url:'../lib/self/right_nav_four_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
+            $('.bigsel>.left_nav_second').eq($(this).index()).css({
+                display:'block'
+            }).siblings().css({
+                display:'none'
             })
-            $('.left_nav_second_four>.rg').html(str)
-        }
-    })
-}
-// 服饰鞋靴
-getList11()
-function getList11(){
-    $.ajax({
-        url:'../lib/self/right_nav_five.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
+        })
+        $(this).mouseleave(function(){
+            $('.bigsel').css({
+                display:'none'
             })
-            $('.left_nav_second_five>.lf').html(str)
-        }
-    })
-}
-// 服饰鞋靴
-getList12()
-function getList12(){
-    $.ajax({
-        url:'../lib/self/right_nav_five_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
+            $('.bigsel>.left_nav_second').eq($(this).index()).css({
+                display:'none'
+            }).siblings().css({
+                display:'none'
             })
-            $('.left_nav_second_five>.rg').html(str)
-        }
+        })
+        })
     })
-}
-// 户外运动
-getList13()
-function getList13(){
-    $.ajax({
-        url:'../lib/self/right_nav_six.json',
-        dataType:'json',
-        success:function(res){
-            // console.log(res)
-            let str=''
-            res.forEach(item=>{
-                // console.log(item)
-                str+=`
-                    <li>
-                    <dl>
-                    <dt>${item.title}</dt>
-                    <dd>
-                    <div>
-                `
-                item.list.forEach(item2=>{
-                    str+= `
-                        <a>${item2.name}</a>
-                    `
-                })
-                str+=`
-                </div>
-                </dd>
-                </dl>
-                </li>
-                `
-            })
-            $('.left_nav_second_six>.lf').html(str)
-        }
+    $('.bigsel').mouseenter(function(){
+        $('.bigsel').css({
+            display:'block'
+        })
+        $('.bigsel>.left_nav_second').eq($(this).index()).css({
+            display:'block'
+        }).siblings().css({
+            display:'none'
+        })
     })
-}
-// 户外运动
-getList14()
-function getList14(){
-    $.ajax({
-        url:'../lib/self/right_nav_six_pic.json',
-        dataType:'json',
-        success:function(res){
-            let str=''
-            res.forEach(item=>{
-                str+=`
-                <li>
-                <img src="${item.img}">
-                </li>
-                `
-            })
-            $('.left_nav_second_six>.rg').html(str)
-        }
+    $('.bigsel').mouseleave(function(){
+        $('.bigsel').css({
+            display:'none'
+        })
+        $('.bigsel>.left_nav_second').eq($(this).index()).css({
+            display:'none'
+        }).siblings().css({
+            display:'none'
+        })
     })
-}
+
+
+
+
+
+
+
+
 // 鼠标滚轮到100px的时候header变成固定定位
 $(window).scroll(function(){
     if($(window).scrollTop()>=150){
