@@ -81,7 +81,7 @@ const webserverHandler=function(){
                 .pipe(webserver({
                     host:'localhost',
                     port:8086,
-                    open:'./pages/index.html',
+                    open:'./pages/cart.html',
                     livereload:true,
                     proxies:[{
                         source:'/xiangmu',

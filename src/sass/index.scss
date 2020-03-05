@@ -113,6 +113,9 @@ nav{
                         transform-origin: 40% 30%;
                         border-top: 4px solid red;
                     }
+                    &:hover{
+                        color: red;
+                    }
                     span{
                         position: absolute;
                         right: -10px;
@@ -262,8 +265,8 @@ nav{
             height: 14px;
             background: url('../images/index/all.png') no-repeat -468px -667px;
             position: absolute;
-            top: 46px;
-            left: 361px;
+            top: 28px;
+            left: 502px;
             
         }
         .ser{
@@ -658,11 +661,12 @@ nav{
 .p_l{
     width: 99px;
     height: 672px;
-    // background: skyblue;
-    position: absolute;
-    top: 810px;
-    left: 60px;
+    position: fixed;
+    top: 90px;
+    left: 70px;
+    z-index: 100;
     cursor: pointer;
+    // background: salmon;
     .p_l_t{
         width: 99px;
         height: 49px;
@@ -729,9 +733,10 @@ nav{
     width: 62px;
     height: 243px;
     // background: orangered;
-    position: absolute;
-    top: 810px;
-    right: 90px;
+    position: fixed;
+    top: 90px;
+    right: 100px;
+    z-index: 100;
     ul{
         border: 1px solid #eaeaea;
         li{

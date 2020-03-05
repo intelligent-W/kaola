@@ -197,8 +197,6 @@ function getList2(){
         success:function(res){
             // console.log(res)
             let str=''
-
-
             res.forEach(item1=>{
                 //先11分类
                 str+=`<div class="left_nav_second">`
@@ -249,6 +247,9 @@ $(function(){
             }).siblings().css({
                 display:'none'
             })
+            $(this).css({
+                color:'hotpink'
+            })
         })
         $(this).mouseleave(function(){
             $('.bigsel').css({
@@ -286,16 +287,6 @@ $(function(){
     
 
 
- // 右侧小轮播图
-    
-//   window.onload=function(){
-    // for(i=0;i<mySwiper1.pagination.bullets.length;i++){
-    //     mySwiper1.pagination.bullets[i].onmouseover=function(){
-    //       this.click();
-    //     };
-    //   } 
-//   }
-
    
 // 内容部分请求数据
 
@@ -308,15 +299,15 @@ $.ajax({
     }).then(function(res){
         let str=''
         res.forEach(item=>{
-            str+=`<div class="beauty"><div class="b_o">
+            str+=`<div class="beauty" id="${item.id}"><div class="b_o">
             <div class="b_top">`
             // b_top div结束
     
             str+=`<h1>${item.title}</h1>`
             str+=`<ul>`
-            str+=`<section class="first"><a href="">${item.keyname}</a></section>`
+            str+=`<section class="first"><a>${item.keyname}</a></section>`
             item.list.forEach(item2=>{
-                str+=`<li><a href="">${item2.name}</a></li>`
+                str+=`<li><a>${item2.name}</a></li>`
             })
             str+=`</ul>`
             str+=`<p>${item.more}</p>`
@@ -346,7 +337,7 @@ $.ajax({
                 <div class="a1">
                     <ol>`
                 item5.listbuy.forEach(item6=>{
-                    str+=`<li><img src="${item6.imgpic}"><p><a href="">${item6.buyname}</a><span>${item6.price}</span></p></li>`
+                    str+=`<li><img src="${item6.imgpic}"><p><a>${item6.buyname}</a><span>${item6.price}</span></p></li>`
                 })
                 str+=`</ol></div></div>` 
             })
@@ -400,8 +391,192 @@ $.ajax({
           } 
     }
 
-
-
+// 滚动到800的时候第一个li颜色改变
+$('.p_l').hide()
+$('.p_r').hide()
+$(window).scroll(function(){
+        if($(window).scrollTop()>=800&&$(window).scrollTop()<1700){
+            $('.p_l>ol>li').eq(0).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(0).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(0).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(0).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=1700&&$(window).scrollTop()<2600){
+            $('.p_l>ol>li').eq(1).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(1).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(1).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(1).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=2600&&$(window).scrollTop()<3500){
+            $('.p_l>ol>li').eq(2).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(2).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(2).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(2).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=3500&&$(window).scrollTop()<4300){
+            $('.p_l>ol>li').eq(3).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(3).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(3).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(3).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=4300&&$(window).scrollTop()<5200){
+            $('.p_l>ol>li').eq(4).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(4).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(4).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(4).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=5200&&$(window).scrollTop()<6100){
+            $('.p_l>ol>li').eq(5).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(5).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(5).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(5).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=6100&&$(window).scrollTop()<7000){
+            $('.p_l>ol>li').eq(6).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(6).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(6).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(6).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=7000&&$(window).scrollTop()<7900){
+            $('.p_l>ol>li').eq(7).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(7).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(7).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(7).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=7900&&$(window).scrollTop()<8800){
+            $('.p_l>ol>li').eq(8).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(8).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(8).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(8).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=8800&&$(window).scrollTop()<9700){
+            $('.p_l>ol>li').eq(9).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(9).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(9).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(9).children().css({
+                color: ''
+            })
+        }
+        if($(window).scrollTop()>=9700&&$(window).scrollTop()<10600){
+            $('.p_l>ol>li').eq(10).css({
+                background: '#ccc'
+            })
+            $('.p_l>ol>li').eq(10).children().css({
+                color: 'red'
+            })
+        }else{
+            $('.p_l>ol>li').eq(10).css({
+                background: ''
+            })
+            $('.p_l>ol>li').eq(10).children().css({
+                color: ''
+            })
+        }
+        
+        if($(window).scrollTop()>=740&&$(window).scrollTop()<10560){
+            $('.p_l').show()
+            $('.p_r').show()
+        }
+        else{
+            $('.p_l').hide()
+            $('.p_r').hide()
+        }
+})
+$(window).scroll(function(){
+    $('.p_r>ul>li').eq(3).click(function(){
+        $(html).animate({
+           scrollTop:0
+        },1000)
+    })
+})
 
 
 
@@ -417,15 +592,6 @@ $(window).scroll(function(){
         })
     }
 })
-// if($(window).scrollTop()>=750){
-//     $('.p_l').css({
-//         position:'fixed',
-//     })
-//     $('.p_r').css({
-//         position:'fixed'
-        
-//     })
-// }
 
 
 
