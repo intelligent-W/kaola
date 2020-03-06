@@ -130,7 +130,7 @@ const info = JSON.parse(localStorage.getItem('information'))
         info.isSelect = false 
         cartList.push(info)
       }
-
+      alert('您已成功加入购物车！')
       localStorage.setItem('cartList', JSON.stringify(cartList))
     })
     $("#exzoom").exzoom();

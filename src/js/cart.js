@@ -98,7 +98,8 @@ $('.header>.shop').mouseleave(function(){
         backgroundColor:''
     })
 })
-// 获取数据
+$('.selectAll').prop('checked',false)
+
 const cartList = JSON.parse(localStorage.getItem('cartList'))
 if (!cartList) {
     alert('您还没有加入商品到购物车，快去首页找找吧')
@@ -106,6 +107,8 @@ if (!cartList) {
     bindHtml()
     bindEvent()
   }
+$('.selectAll').prop('checked',false)
+
   function bindHtml() {
     let selectAll = cartList.every(item => {
      console.log(item)
@@ -176,9 +179,7 @@ function bindEvent() {
   })
 
   $('.cart').on('change', '.selectOne', function () {
-
     const id = $(this).data('id')
-
     cartList.forEach(item => {
       if (item.id === id) {
         item.isSelect = !item.isSelect
@@ -186,50 +187,50 @@ function bindEvent() {
     })
 
     bindHtml()
-
     localStorage.setItem('cartList', JSON.stringify(cartList))
   })
-
-  // 4-3. 减少商品数量的事件
   $('.cart').on('click', '.sub', function () {
-
     const id = $(this).data('id')
-
     cartList.forEach(item => {
       if (item.id === id) {
         item.number > 1 ? item.number-- : ''
         item.xiaoji = item.price * item.number
       }
     })
-
     bindHtml()
-
     localStorage.setItem('cartList', JSON.stringify(cartList))
   })
-
   $('.cart').on('click', '.add', function () {
-
     const id = $(this).data('id')
-
     cartList.forEach(item => {
       if (item.id === id) {
         item.number++
         item.xiaoji = item.number * item.price
       }
     })
-
     bindHtml()
-
     localStorage.setItem('cartList', JSON.stringify(cartList))
   })
 
   $('.cart').on('click', '.del', function () {
     const id = $(this).data('id')
-    console.log('把数组中 id 为 : ' + id + ' 的数去去掉, 从新渲染页面, 从新存储到 lcoalStorage')
+    cartList.forEach(item => {
+      if(item.id===id){
+        cartList.splice(item,1)
+      }
+      if(cartList.length===0){
+        $('.selectAll').prop('checked',false)
+        console.log(1)
+      }
+    })
+    bindHtml()
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+    $('.selectAll').prop('checked',false)
   })
   $('.cart').on('click', '.clear', function () {
-    console.log('把数组清空')
-    console.log('从新渲染页面')
-    console.log('把空数组从新存储到 lcoalStorage 里面')
+    cartList.length=0
+    bindHtml()
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+    $('.selectAll').prop('checked',false)
   })
 }
