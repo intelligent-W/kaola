@@ -113,7 +113,7 @@ secCode.onmouseleave=function(){
     secCode.style.color=""
 }
 
-// 判断邮箱登录是否正确
+// 判断密码登录是否正确
 var telInp=document.querySelector('.tel')
 var psdInp=document.querySelector('.password')
 var errInfo=document.querySelector('.hint')
@@ -142,4 +142,36 @@ login1.onclick=function(e){
         }
 
       }, `tel=${utel}&password=${upsd}`)
+}
+
+
+// 判断邮箱登录是否正确
+var mailInp=document.querySelector('.mail')
+var passInp=document.querySelector('.pass')
+var errInfo=document.querySelector('.hint')
+
+var login2=document.querySelectorAll('.lg')[2]
+login2.onclick=function(e){
+    e=e||window.event
+    e.preventDefault()
+
+    var umail=mailInp.value
+    var upass=passInp.value
+
+    if (!umail || !upass) {
+        alert('请完整填写表单')
+        return
+      }
+      postSend('/myproject', function (res) {
+        var result = JSON.parse(res)
+
+        if (result.code === 0) {
+          alert('您输入的信息有误')
+        } else {
+          // 登录成功
+          setCookie('login1', 1, 300)
+          window.location.href = '../pages/index.html'
+        }
+
+      }, `mail=${umail}&pass=${upass}`)
 }

@@ -83,10 +83,16 @@ const webserverHandler=function(){
                     port:8086,
                     open:'./pages/cart.html',
                     livereload:true,
-                    proxies:[{
+                    proxies:[
+                        {
                         source:'/xiangmu',
                         target:'http://127.0.0.1:86/kaola/login1.php'
-                    }]
+                        },
+                        {
+                        source:'/myproject',
+                        target:'http://127.0.0.1:86/kaola/login2.php' 
+                        }
+                    ]
                 }))
 }
 

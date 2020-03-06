@@ -134,3 +134,6 @@ const info = JSON.parse(localStorage.getItem('information'))
       localStorage.setItem('cartList', JSON.stringify(cartList))
     })
     $("#exzoom").exzoom();
+    $('.buying').click(function(){
+        $(window).attr('location','../pages/cart.html')
+    })

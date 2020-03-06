@@ -98,3 +98,138 @@ $('.header>.shop').mouseleave(function(){
         backgroundColor:''
     })
 })
+// 获取数据
+const cartList = JSON.parse(localStorage.getItem('cartList'))
+if (!cartList) {
+    alert('您还没有加入商品到购物车，快去首页找找吧')
+  } else {
+    bindHtml()
+    bindEvent()
+  }
+  function bindHtml() {
+    let selectAll = cartList.every(item => {
+     console.log(item)
+      return item.isSelect === true
+    })
+    let str = `
+    <p class="aa">我的购物车</p>
+    <div class="top">
+      <input class="selectAll" type="checkbox" ${ selectAll ? 'checked' : '' }>   全选
+      <strong>商品信息</strong>
+      <ul><li>单价(元)</li><li>数量</li><li>金额</li><li>操作</li></ul>
+    </div>
+    <ul class="center">
+  `
+  cartList.forEach(item => {
+    str += `
+      <li>
+        <div class="select">
+          <input data-id=${ item.id } class="selectOne" type="checkbox" ${ item.isSelect ? 'checked' : '' }>
+        </div>
+        <div class="info">
+          <img src="${ item.img }" alt="">
+          <p>${ item.name }</p>
+        </div>
+        <p class="price">${ item.price }</p>
+        <div class="number">
+          <button class="sub" data-id=${ item.id }>-</button>
+          <input type="text" value="${ item.number }">
+          <button class="add" data-id=${ item.id }>+</button>
+        </div>
+        <p class="xiaoji">￥： ${ item.xiaoji.toFixed(2) }</p>
+        <div class="del" data-id=${ item.id }>删除</div>
+      </li>
+    `
+  })
+
+  let selectArr = cartList.filter(item => item.isSelect)
+  let selectNumber = 0
+  let selectPrice = 0
+  selectArr.forEach(item => {
+    selectNumber += item.number
+    selectPrice += item.xiaoji
+  })
+
+
+  str += `
+    </ul>
+    <div class="bottom">
+      <p>已选商品  <span>${ selectNumber }</span></p>
+      <p>总价(不含运费)： <span>￥： ${ selectPrice.toFixed(2) }</span></p>
+      <button class="pay" ${ selectArr.length ? '' : 'disabled'}>去结算</button>
+      <button class="clear">清空购物车</button>
+    </div>
+  `
+
+  $('.cart').html(str)
+}
+
+function bindEvent() {
+  $('.cart').on('change', '.selectAll', function () {
+    cartList.forEach(item => {
+      item.isSelect = this.checked
+    })
+
+    bindHtml()
+
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+  })
+
+  $('.cart').on('change', '.selectOne', function () {
+
+    const id = $(this).data('id')
+
+    cartList.forEach(item => {
+      if (item.id === id) {
+        item.isSelect = !item.isSelect
+      }
+    })
+
+    bindHtml()
+
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+  })
+
+  // 4-3. 减少商品数量的事件
+  $('.cart').on('click', '.sub', function () {
+
+    const id = $(this).data('id')
+
+    cartList.forEach(item => {
+      if (item.id === id) {
+        item.number > 1 ? item.number-- : ''
+        item.xiaoji = item.price * item.number
+      }
+    })
+
+    bindHtml()
+
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+  })
+
+  $('.cart').on('click', '.add', function () {
+
+    const id = $(this).data('id')
+
+    cartList.forEach(item => {
+      if (item.id === id) {
+        item.number++
+        item.xiaoji = item.number * item.price
+      }
+    })
+
+    bindHtml()
+
+    localStorage.setItem('cartList', JSON.stringify(cartList))
+  })
+
+  $('.cart').on('click', '.del', function () {
+    const id = $(this).data('id')
+    console.log('把数组中 id 为 : ' + id + ' 的数去去掉, 从新渲染页面, 从新存储到 lcoalStorage')
+  })
+  $('.cart').on('click', '.clear', function () {
+    console.log('把数组清空')
+    console.log('从新渲染页面')
+    console.log('把空数组从新存储到 lcoalStorage 里面')
+  })
+}
