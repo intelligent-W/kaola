@@ -137,7 +137,7 @@ login1.onclick=function(e){
           alert('您输入的信息有误')
         } else {
           // 登录成功
-          setCookie('login', 1, 300)
+          setCookie('login', 1, 3000)
           window.location.href = '../pages/index.html'
         }
 
@@ -169,7 +169,7 @@ login2.onclick=function(e){
           alert('您输入的信息有误')
         } else {
           // 登录成功
-          setCookie('login1', 1, 300)
+          setCookie('login1', 1, 3000)
           window.location.href = '../pages/index.html'
         }
 

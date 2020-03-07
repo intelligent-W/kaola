@@ -130,10 +130,23 @@ const info = JSON.parse(localStorage.getItem('information'))
         info.isSelect = false 
         cartList.push(info)
       }
-      alert('您已成功加入购物车！')
-      localStorage.setItem('cartList', JSON.stringify(cartList))
+
+      if(getCookie('login')==='1' || getCookie('login1')==='1'){
+        alert('您已成功加入购物车！')
+        localStorage.setItem('cartList', JSON.stringify(cartList))
+    }else{
+        alert('请您先登录')
+    }
+
+
+      
     })
     $("#exzoom").exzoom();
+
     $('.buying').click(function(){
-        $(window).attr('location','../pages/cart.html')
+        if(getCookie('login')==='1' || getCookie('login1')==='1'){
+            $(window).attr('location','../pages/cart.html')
+        }else{
+            alert('请您先登录')
+        }
     })
